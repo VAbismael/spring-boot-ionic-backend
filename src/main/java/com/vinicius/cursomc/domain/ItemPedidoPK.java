@@ -1,7 +1,4 @@
-package com.vinicius.cursomc;
-
-import com.vinicius.cursomc.domain.Pedido;
-import com.vinicius.cursomc.domain.Produto;
+package com.vinicius.cursomc.domain;
 
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
