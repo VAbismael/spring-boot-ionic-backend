@@ -3,6 +3,7 @@ package com.vinicius.cursomc.resources;
 import com.vinicius.cursomc.domain.Cliente;
 import com.vinicius.cursomc.domain.Cliente;
 import com.vinicius.cursomc.dto.ClienteDTO;
+import com.vinicius.cursomc.dto.ClienteNewDTO;
 import com.vinicius.cursomc.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,6 +28,14 @@ public class ClienteResource {
         List<Cliente> list = service.findAll();
         List<ClienteDTO> listDTO = list.stream().map(obj -> new ClienteDTO(obj)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDTO);
+    }
+
+    @PostMapping
+    public ResponseEntity<Void> insert(@Valid @RequestBody ClienteNewDTO objDto){
+        Cliente obj = service.fromDTO(objDto);
+        obj = service.insert(obj);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
+        return ResponseEntity.created(uri).build();
     }
 
     @GetMapping(value = "/page")
