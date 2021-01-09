@@ -1,12 +1,14 @@
 package com.vinicius.cursomc.dto;
 
 import com.vinicius.cursomc.domain.Cliente;
+import com.vinicius.cursomc.services.validation.ClienteUpdate;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
+@ClienteUpdate
 public class ClienteDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
