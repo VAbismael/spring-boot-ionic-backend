@@ -3,7 +3,6 @@ package com.vinicius.cursomc.services;
 import com.vinicius.cursomc.domain.ItemPedido;
 import com.vinicius.cursomc.domain.PagamentoComBoleto;
 import com.vinicius.cursomc.domain.Pedido;
-import com.vinicius.cursomc.domain.Produto;
 import com.vinicius.cursomc.domain.enums.EstadoPagamento;
 import com.vinicius.cursomc.repositories.ItemPedidoRepository;
 import com.vinicius.cursomc.repositories.PagamentoRepository;
